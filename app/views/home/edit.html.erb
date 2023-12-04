@@ -1,0 +1,9 @@
+<!-- app/views/products/edit.html.erb -->
+
+<div class="container mt-4">
+  <h1 class="display-4">Edit Product</h1>
+
+  <%= render 'form', product: @product %>
+
+  <%= link_to 'Back', products_path, class: 'btn btn-secondary my-2' %>
+</div>

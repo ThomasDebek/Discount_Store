@@ -1,0 +1,20 @@
+<!-- app/views/products/_form.html.erb -->
+
+<%= form_with(model: product, local: true) do |form| %>
+  <!-- Tutaj dodaj pola formularza, takie jak nazwa, cena, itp. -->
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control' %>
+  </div>
+
+  <!-- Dodaj inne pola według potrzeb -->
+
+  <div class="actions">
+    <%= form.submit 'Create Product', class: 'btn btn-primary' %>
+  </div>
+<% end %>

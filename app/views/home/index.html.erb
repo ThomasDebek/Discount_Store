@@ -1,5 +1,4 @@
 <!-- app/views/home/index.html.erb -->
-
 <div class="container mt-4">
   <h1 class="display-4">Welcome to the Discount Store!</h1>
 
@@ -12,6 +11,7 @@
     <% @products.each do |product| %>
       <div class="col">
         <div class="card h-100">
+          <%= link_to (image_tag product.image, class: "card-img-top", alt: product.name if product.image.attached?), product %>
           <div class="card-body">
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text">$<%= product.price %></p>
@@ -20,9 +20,9 @@
             <% end %>
             <div class="d-flex justify-content-between align-items-center">
               <% if user_signed_in? && current_user == product.user %>
-                <span class="btn-group">
-                  <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm' %>
-                  <%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, form_class: 'd-inline', class: 'btn btn-danger btn-sm' %>
+                <span class="d-flex">
+                  <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm mr-2' %>
+                  <%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm mr-2' %>
                 </span>
               <% end %>
               <%= link_to 'Show', product_path(product), class: 'btn btn-primary btn-sm' %>

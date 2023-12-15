@@ -16,6 +16,7 @@ User.destroy_all
 
 # db/seeds.rb
 require 'faker'
+require 'open-uri'
 
 # Create regular users
 10.times do
@@ -41,6 +42,8 @@ dave_coupon = Coupon.create(code: Faker::Alphanumeric.alphanumeric(number: 8), d
 users = User.all
 
 # Zaktualizuj generowanie produktów
+users = User.all
+
 5.times do
   # Wybierz losowego użytkownika
   user = users.sample
@@ -51,6 +54,11 @@ users = User.all
   # Upewnij się, że product został poprawnie zapisany przed utworzeniem promocji
   if product.persisted?
     Promotion.create(product: product, coupon: Coupon.all.sample)
+
+    # Dodaj generowanie i załączanie obrazów
+    puts "Generating image for #{product.name}"
+    downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{product.name.split.last}")
+    product.image.attach(io: downloaded_image, filename: "mi_#{product.id}.png")
   else
     puts "Failed to create product: #{product.errors.full_messages.join(', ')}"
   end

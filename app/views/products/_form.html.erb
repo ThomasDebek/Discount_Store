@@ -1,7 +1,4 @@
-<!-- app/views/products/_form.html.erb -->
-
-<%= form_with(model: product, local: true) do |form| %>
-  <!-- Tutaj dodaj pola formularza, takie jak nazwa, cena, itp. -->
+<%= form_for @product, url: product_path(@product), method: :patch do |form| %>
   <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: 'form-control' %>
@@ -9,12 +6,16 @@
 
   <div class="form-group">
     <%= form.label :price %>
-    <%= form.number_field :price, class: 'form-control' %>
+    <%= form.text_field :price, class: 'form-control' %>
   </div>
 
-  <!-- Dodaj inne pola według potrzeb -->
-
-  <div class="actions">
-    <%= form.submit 'Create Product', class: 'btn btn-primary' %>
+  <div class="form-group">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'form-control' %>
   </div>
+
+
+  <!-- Dodaj inne pola formularza, które chcesz edytować -->
+
+  <%= form.submit 'Update Product', class: 'btn btn-primary' %>
 <% end %>

@@ -11,10 +11,7 @@ class ProductsController < ApplicationController
 
 
   def show
-    respond_to do |format|
-      format.html { render :show }
-      format.turbo_stream
-    end
+    @comments = @product.comments.order(created_at: :desc)
   end
 
   def new

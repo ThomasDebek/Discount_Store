@@ -30,7 +30,7 @@
         <!-- Przyciski akcji -->
         <span class="d-flex">
           <button class="btn btn-outline-info btn-sm mr-2">Like</button>
-          <% if comment.user == current_user %>
+          <% if  comment.user.present? && comment.user == current_user %>
             <%= button_to 'Usuń komentarz', [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" %>
             <%= link_to 'Edytuj komentarz', edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" %>
           <% end %>

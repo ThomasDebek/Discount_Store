@@ -12,10 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-star-rating
 
- */
+
+
+*/
 
 @import 'bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 body {
   background-color: #2d2d2d; /* Kolor tła zbliżony do tego w ChatGPT */
@@ -46,4 +51,13 @@ body {
 .card {
   background-color: #343a40; /* Kolor tła karty */
   color: #ffffff; /* Kolor tekstu w karcie */
+}
+
+.rating-stars .star {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.rating-stars .star.selected {
+  color: #ffc107; /* Color of selected stars */
 }

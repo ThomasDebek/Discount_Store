@@ -10,8 +10,8 @@ Product.destroy_all
 Coupon.destroy_all
 Promotion.destroy_all
 User.destroy_all
-
-
+Brand.destroy_all
+Category.destroy_all
 
 
 # db/seeds.rb
@@ -44,18 +44,39 @@ users = User.all
 # Zaktualizuj generowanie produktów
 users = User.all
 
+
+
+Category.destroy_all
+4.times do
+  Category.create(
+    name: Faker::Commerce.department(max: 1)
+  )
+end
+
+Brand.destroy_all
+4.times do
+  Brand.create(
+    name: Faker::Device.manufacturer
+  )
+end
+
+categories = Category.all
+brands = Brand.all
+
+
+
 5.times do
   # Wybierz losowego użytkownika
   user = users.sample
-
-  # Stwórz produkt przypisany do wybranego użytkownika
-  product = user.products.create(name: Faker::Food.dish, price: Faker::Commerce.price(range: 5..20.0))
-
-  # Upewnij się, że product został poprawnie zapisany przed utworzeniem promocji
+  category = categories.sample
+  brand = brands.sample
+  product = user.products.create(name: Faker::Food.dish,
+                                 price: Faker::Commerce.price(range: 5..20.0),
+                                 category: category,
+                                 brand: brand
+  )
   if product.persisted?
     Promotion.create(product: product, coupon: Coupon.all.sample)
-
-    # Dodaj generowanie i załączanie obrazów
     puts "Generating image for #{product.name}"
     downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{product.name.split.last}")
     product.image.attach(io: downloaded_image, filename: "mi_#{product.id}.png")

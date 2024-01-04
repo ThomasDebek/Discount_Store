@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>DiscountStore</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,14 +12,7 @@
 </head>
 
 <body>
-<!-- app/views/layouts/_navbar.html.erb -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <!-- app/views/layouts/_navbar.html.erb -->
-
-  <!-- app/views/layouts/_navbar.html.erb -->
-
-  <!-- app/views/layouts/_navbar.html.erb -->
-
   <div class="container">
     <%= link_to 'Discount Store', root_path, class: 'navbar-brand' %>
 
@@ -32,11 +26,18 @@
       <% end %>
     </div>
   </div>
-
-
 </nav>
-  <div class="container">
-    <%= yield %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= yield %>
+    </div>
+    <div class="col-lg-3">
+      <%= render 'layouts/sidebar' %>
+    </div>
   </div>
+</div>
 </body>
+
 </html>

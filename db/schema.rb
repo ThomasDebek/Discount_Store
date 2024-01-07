@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema[7.0].define(version: 2024_01_04_224344) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_12_16_131608) do
->>>>>>> comment
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_131608) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-<<<<<<< HEAD
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -59,8 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_16_131608) do
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> comment
   create_table "comments", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "user_id", null: false

@@ -5,4 +5,11 @@ class Product < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :comments, dependent: :destroy
+
+  belongs_to :category
+  belongs_to :brand
+
+  scope :filter_by_category, proc { |category_id| where(category_id: category_id) }
+  scope :filter_by_brand, proc { |brand_id| where(brand_id: brand_id )}
+
 end

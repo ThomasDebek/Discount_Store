@@ -8,7 +8,7 @@
 /.bundle
 .idea
 .DS_Store
-.idea/workspace
+.idea/workspace.xml
 /node_modules/jquery
 /node_modules/popper.js
 

@@ -65,7 +65,7 @@ brands = Brand.all
 
 
 
-5.times do
+9.times do
   # Wybierz losowego użytkownika
   user = users.sample
   category = categories.sample

@@ -1,13 +1,13 @@
 <!-- app/views/products/show.html.erb -->
-<div class="container mt-4">
-  <div class="card">
+<br class="container mt-4">
+  <br class="card">
 
     <%= image_tag @product.image, class: "card-img-top", alt: @product.name if @product.image.attached? %>
     <div class="card-body">
       <h1 class="display-4"><%= @product.name %></h1>
       <p class="lead">$<%= @product.price %></p>
       <% if @product.user.present? %>
-        <p>User: <%= @product.user.email %></p>
+        <p> <%= @product.user.email %></p>
       <% end %>
       <% if user_signed_in? && current_user == @product.user %>
 
@@ -23,5 +23,12 @@
 
       <% end %>
     </div>
+  </br>
+
+  <%= render "comments/form" %> </br>
+  <%= render "comments/comment" %>
+
+
   </div>
 </div>
+

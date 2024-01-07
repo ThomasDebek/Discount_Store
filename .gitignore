@@ -8,8 +8,14 @@
 /.bundle
 .idea
 .DS_Store
+<<<<<<< HEAD
 .idea/workspace.xml
 /node_modules
+=======
+.idea/workspace
+/node_modules/jquery
+/node_modules/popper.js
+>>>>>>> comment
 
 # Ignore all logfiles and tempfiles.
 /log/*

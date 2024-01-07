@@ -9,6 +9,8 @@
 .idea
 .DS_Store
 .idea/workspace
+/node_modules/jquery
+/node_modules/popper.js
 
 # Ignore all logfiles and tempfiles.
 /log/*

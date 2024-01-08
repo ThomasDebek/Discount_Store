@@ -38,5 +38,9 @@
         </div>
       </div>
     <% end %>
+    <div class="pagination">
+      <%= will_paginate @products, :page_links => false %>
+    </div>
+
   </div>
 </div>

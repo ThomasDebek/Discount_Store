@@ -14,4 +14,6 @@ class Product < ApplicationRecord
   scope :filter_by_category, proc { |category_id| where(category_id: category_id) }
   scope :filter_by_brand, proc { |brand_id| where(brand_id: brand_id )}
 
+  pg_search_scope :search_by_name, against: :name, using: { dmetaphone: {}, trigram: {}, tsearch: { prefix: true, any_word: true } }
+
 end

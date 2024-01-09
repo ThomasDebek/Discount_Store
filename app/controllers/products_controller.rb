@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @comments = @product.comments.order(created_at: :desc)
+    @show_sidebar = false
   end
 
   def new

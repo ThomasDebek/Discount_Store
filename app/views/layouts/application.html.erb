@@ -34,9 +34,12 @@
     <div class="col-lg-9">
       <%= yield %>
     </div>
-    <div class="col-lg-3">
-      <%= render 'layouts/sidebar' %>
-    </div>
+    <% if @show_sidebar %>
+      <div class="col-lg-3">
+        <%= render 'layouts/sidebar' %>
+      </div>
+    <% end %>
+  </div>
   </div>
 </div>
 </body>

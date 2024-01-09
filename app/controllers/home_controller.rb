@@ -7,5 +7,6 @@ class HomeController < ApplicationController
 
     @coupons = Coupon.all
     @promotions = Promotion.includes(:product, :coupon).all
+    @show_sidebar = true
   end
 end

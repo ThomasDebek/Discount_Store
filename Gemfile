@@ -7,7 +7,7 @@ gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-star-rating-rails', '~> 4.0'
 gem 'font-awesome-sass'
 gem 'will_paginate', '~> 4.0'
-
+gem 'pg_search', '~> 2.3'
 
 
 

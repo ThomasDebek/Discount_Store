@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  include PgSearch::Model
+
   has_one :promotion
   has_one :coupon, through: :promotion
   has_one :user, through: :coupon

@@ -22,8 +22,10 @@
         <%= link_to 'Welcome, ' + current_user.email + '!', edit_user_registration_path, class: 'nav-link' %>
         <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        <%= render 'layouts/search' %>
       <% else %>
         <%= render 'layouts/navbar_links' %>
+        <%= render 'layouts/search' %>
       <% end %>
     </div>
   </div>

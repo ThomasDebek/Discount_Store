@@ -61,3 +61,27 @@ body {
 .rating-stars .star.selected {
   color: #ffc107; /* Color of selected stars */
 }
+
+
+
+/* Search */
+
+.nav-search {
+  margin-right: 15px; /* Dodaj odpowiedni odstęp od innych elementów w pasku nawigacyjnym */
+}
+
+.input-group {
+  width: 300px; /* Dostosuj szerokość pola wyszukiwania według własnych preferencji */
+}
+
+/* Dostosuj stylowanie dla responsywności (jeśli potrzebne) */
+@media (max-width: 767px) {
+  .nav-search {
+    margin-right: 0;
+    margin-top: 10px; /* Dodaj odstęp od góry w trybie responsywnym */
+  }
+
+  .input-group {
+    width: 100%;
+  }
+}

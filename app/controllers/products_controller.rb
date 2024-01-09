@@ -9,6 +9,14 @@ class ProductsController < ApplicationController
     @show_sidebar = false
   end
 
+  def search
+    @products = SearchProduct.new.call(params[:q]).paginate(page: params[:page], per_page: 6)
+    if @products.empty?
+      flash[:notice] = 'There is no product you are looking for, please try again '
+      redirect_back(fallback_location: root_path) unless @products.any?
+    end
+  end
+
   def new
     @product = Product.new
   end

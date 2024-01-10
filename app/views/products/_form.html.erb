@@ -1,39 +1,48 @@
-
-<%= form_with(model: @product) do |form| %>
+<%= form_with(model: @product, class: "styled-form my-4") do |form| %>
 
   <% if @product.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
       <ul>
-        <% product.errors.each do |error| %>
+        <% @product.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image %>
-  </div>
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
-  <% if @categories.presence %>
-    <%= select_tag(:category_id, options_for_select(@categories)) %>
-  <% end %>
 
-  <% if @brands.presence %>
-    <%= select_tag(:brand_id, options_for_select(@brands)) %>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
+  <div class="form-group text-center">
+    <h3 class="text-success py-3">Your Awesome Product</h3>
   </div>
+
+  <div class="form-group">
+    <%= form.label :image, class: "form-label text-white" %>
+    <%= form.file_field :image, class: "form-control-file border-0 bg-success text-white" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name, class: "form-label text-white" %>
+    <%= form.text_field :name, class: "form-control rounded-0 bg-dark text-white" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price, class: "form-label text-white" %>
+    <%= form.text_field :price, class: "form-control rounded-0 bg-dark text-white" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_id, class: "form-label text-white" %>
+    <%= select_tag(:category_id, options_for_select(@categories), class: "form-control rounded-0 bg-dark text-white") %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :brand_id, class: "form-label text-white" %>
+    <%= select_tag(:brand_id, options_for_select(@brands), class: "form-control rounded-0 bg-dark text-white") %>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit class: "btn btn-success rounded-pill" %>
+  </div>
+
 <% end %>
-

@@ -19,13 +19,17 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @categories = Category.all.map{ |c| [c.name, c.id ]}
+    @brands = Brand.all.map{ |b|[b.name, b.id]}
   end
 
   def create
     @product = current_user.products.build(product_params)
+    @product.category_id = params[:category_id]
+    @product.brand_id = params[:brand_id]
 
     if @product.save
-      redirect_to product_path(@product), notice: 'Product was successfully created.'
+      redirect_to product_url(@product), notice: 'Product was successfully created.'
     else
       render :new
     end
@@ -33,10 +37,14 @@ class ProductsController < ApplicationController
 
   def edit
     @product = current_user.products.find(params[:id])
+    @categories = Category.all.map{ |c|[c.name, c.id]}
+    @brands = Brand.all.map{ |b|[b.name, b.id]}
   end
 
   def update
     @product = current_user.products.find(params[:id])
+    @categories = Category.all.map{ |c|[c.name, c.id]}
+    @brands = Brand.all.map{ |b|[b.name, b.id]}
 
     if @product.update(product_params)
       redirect_to root_path, notice: 'Product was successfully updated.'
@@ -59,6 +67,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :image)
+    params.require(:product).permit(:name, :price, :image, :brand, :category )
   end
 end

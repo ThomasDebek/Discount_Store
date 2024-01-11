@@ -16,6 +16,8 @@ $(document).on('turbolinks:load', function () {
 });
 
 
+
+// app/javascript/application.js
 document.addEventListener('DOMContentLoaded', function () {
     const starsContainer = document.querySelector('.rating-stars');
     const ratingInput = document.querySelector('input[name="comment[rating]"]');
@@ -24,9 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     starsContainer.addEventListener('click', function (event) {
         const selectedStars = event.target.dataset.rating;
 
-        // If you click on a star, set the rating to the star value
-        // Otherwise, set the rating to zero to unselect
-        ratingInput.value = (ratingInput.value === selectedStars) ? 0 : selectedStars;
+        // Set the rating to the selected stars
+        ratingInput.value = selectedStars;
 
         // Update stars based on the current rating value
         updateStars();
@@ -35,14 +36,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateStars() {
         stars.forEach((star, index) => {
             const starValue = index + 1;
-            const starIcon = star.querySelector('i');
 
             if (starValue <= ratingInput.value) {
-                starIcon.classList.remove('bi-star');
-                starIcon.classList.add('bi-star-fill');
+                star.innerHTML = '★';
             } else {
-                starIcon.classList.remove('bi-star-fill');
-                starIcon.classList.add('bi-star');
+                star.innerHTML = '☆';
             }
         });
     }

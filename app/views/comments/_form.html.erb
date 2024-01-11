@@ -19,6 +19,37 @@
       <%= form.submit 'Dodaj komentarz', class: 'btn btn-success btn-sm rounded-pill' %>
     </div>
   <% end %>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const starsContainer = document.querySelector('.rating-stars');
+          const ratingInput = document.querySelector('input[name="comment[rating]"]');
+          const stars = starsContainer.querySelectorAll('.star');
+
+          starsContainer.addEventListener('click', function (event) {
+              const selectedStars = event.target.dataset.rating;
+
+              // Set the rating to the selected stars
+              ratingInput.value = selectedStars;
+
+              // Update stars based on the current rating value
+              updateStars();
+          });
+
+          function updateStars() {
+              stars.forEach((star, index) => {
+                  const starValue = index + 1;
+
+                  if (starValue <= ratingInput.value) {
+                      star.innerHTML = '★';
+                  } else {
+                      star.innerHTML = '☆';
+                  }
+              });
+          }
+      });
+  </script>
+
 <% else %>
   <%= link_to 'Dodaj komentarz', new_user_session_path, class: 'btn btn-success btn-sm rounded-pill' %>
 <% end %>

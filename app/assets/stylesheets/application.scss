@@ -19,7 +19,7 @@
 */
 
 @import 'bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import url("node_modules/bootstrap-icons/font/bootstrap-icons.scss");
 
 
 body {
@@ -53,14 +53,23 @@ body {
   color: #ffffff; /* Kolor tekstu w karcie */
 }
 
+
+
+
+
+/* application.css */
 .rating-stars .star {
   font-size: 20px;
   cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .rating-stars .star.selected {
-  color: #ffc107; /* Color of selected stars */
+  color: #ffc107; /* Kolor wybranych gwiazdek */
 }
+
+
 
 
 

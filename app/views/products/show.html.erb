@@ -4,7 +4,7 @@
 
     <%= image_tag @product.image, class: "card-img-top", alt: @product.name if @product.image.attached? %>
     <div class="card-body">
-      <h1 class="display-4"><%= @product.name %></h1>
+      <h1 class="display-4"><%= @presenter.full_title %></h1>
       <p class="lead">$<%= @product.price %></p>
       <% if @product.user.present? %>
         <p> <%= @product.user.email %></p>
@@ -31,4 +31,3 @@
 
   </div>
 </div>
-

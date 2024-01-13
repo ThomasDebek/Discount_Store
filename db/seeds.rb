@@ -20,7 +20,7 @@ require 'open-uri'
 
 # Create regular users
 10.times do
-  User.create(email: Faker::Internet.email, password: 'password123')
+  User.create(email: Faker::Internet.email, password: 'secret')
 end
 
 # Get two random users
@@ -76,6 +76,13 @@ brands = Brand.all
                                  brand: brand
   )
   if product.persisted?
+    Comment.create(
+      product: product,
+      user: users.sample,
+      rating: rand(1..5),
+      body: Faker::Lorem.paragraph
+    )
+
     Promotion.create(product: product, coupon: Coupon.all.sample)
     puts "Generating image for #{product.name}"
     downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{product.name.split.last}")

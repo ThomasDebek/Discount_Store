@@ -1,42 +1,41 @@
 <div class="container">
-  <!-- Formularz do dodawania nowego komentarza -->
   <% @product.comments.each do |comment| %>
-    <div class="comment-container border p-3 mb-3">
-      <!-- Przykład komentarza -->
-      <div class="d-flex align-items-center mb-2">
-        <div class="user-avatar mr-2">
-          <img src="https://via.placeholder.com/40" alt="User Avatar" class="rounded-circle">
+    <% unless comment.body.blank? %>
+      <div class="comment-container border p-3 mb-3">
+        <div class="d-flex align-items-center mb-2">
+          <div class="user-avatar mr-2">
+            <img src="https://via.placeholder.com/40" alt="User Avatar" class="rounded-circle">
+          </div>
+          <div class="user-info">
+            <% if comment.user.present? && comment.user.email.present? %>
+              <span class="user-name"><%= comment.user.email %></span>
+            <% end %>
+            <% if comment.created_at.present? %>
+              <span class="text-muted">, <%= time_ago_in_words(comment.created_at) %> ago</span>
+            <% end %>
+          </div>
         </div>
-        <div class="user-info">
-          <% if comment.user.present? && comment.user.email.present? %>
-            <span class="user-name"><%= comment.user.email %></span>
-          <% end %>
-          <% if comment.created_at.present? %>
-            <span class="text-muted">, <%= time_ago_in_words(comment.created_at) %> ago</span>
-          <% end %>
+
+        <div class="comment-content">
+          <p class="mb-1">
+            <strong>Ocena:</strong> <%= comment.rating %> / 5
+          </p>
+          <p class="mb-1">
+            <strong>Komentarz:</strong> <%= comment.body %>
+          </p>
+        </div>
+
+        <div class="comment-actions d-flex justify-content-between align-items-center mt-2">
+          <span class="d-flex">
+            <button class="btn btn-outline-info btn-sm mr-2">Like</button>
+            <% if  comment.user.present? && comment.user == current_user %>
+              <%= button_to 'Usuń komentarz', [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" %>
+              <%= link_to 'Edytuj komentarz', edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" %>
+            <% end %>
+          </span>
+          <span class="likes-count">15 Likes</span>
         </div>
       </div>
-
-      <div class="comment-content">
-        <p class="mb-1">
-          <strong>Ocena:</strong> <%= comment.rating %> / 5
-        </p>
-        <p class="mb-1">
-          <strong>Komentarz:</strong> <%= comment.body %>
-        </p>
-      </div>
-
-      <div class="comment-actions d-flex justify-content-between align-items-center mt-2">
-        <!-- Przyciski akcji -->
-        <span class="d-flex">
-          <button class="btn btn-outline-info btn-sm mr-2">Like</button>
-          <% if  comment.user.present? && comment.user == current_user %>
-            <%= button_to 'Usuń komentarz', [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" %>
-            <%= link_to 'Edytuj komentarz', edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" %>
-          <% end %>
-        </span>
-        <span class="likes-count">15 Likes</span>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

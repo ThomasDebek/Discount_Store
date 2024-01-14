@@ -19,9 +19,15 @@ require 'faker'
 require 'open-uri'
 
 # Create regular users
+# db/seeds.rb
+# ...
+
+# Create regular users with shortened email
 10.times do
-  User.create(email: Faker::Internet.email, password: 'secret')
+  email_prefix = Faker::Name.first_name.downcase
+  User.create(email: "#{email_prefix}@gmail.com", password: 'secret')
 end
+
 
 # Get two random users
 user1 = User.all.sample
@@ -70,7 +76,7 @@ brands = Brand.all
   user = users.sample
   category = categories.sample
   brand = brands.sample
-  product = user.products.create(name: Faker::Food.dish,
+  product = user.products.create(name: Faker::Food.ingredient,
                                  price: Faker::Commerce.price(range: 5..20.0),
                                  category: category,
                                  brand: brand

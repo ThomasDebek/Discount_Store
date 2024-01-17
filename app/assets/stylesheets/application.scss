@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require jquery-star-rating
+ *= require font-awesome
 
 
 
@@ -20,6 +21,7 @@
 
 @import 'bootstrap';
 @import url("node_modules/bootstrap-icons/font/bootstrap-icons.scss");
+@import "font-awesome";
 
 
 body {

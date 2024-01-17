@@ -9,13 +9,17 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :products do
-    resources :comments
+    resources :comments do
+      member do
+        get 'edit'
+        post 'upvote'
+        post 'downvote'
+      end
+    end
     collection do
       get 'search'
     end
-    member do
-      get 'edit'
-    end
+
   end
   get 'comments/edit'
 

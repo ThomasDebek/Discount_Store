@@ -16,4 +16,6 @@ class Product < ApplicationRecord
 
   pg_search_scope :search_by_name, against: :name, using: { dmetaphone: {}, trigram: {}, tsearch: { prefix: true, any_word: true } }
 
+  acts_as_votable
+
 end

@@ -6,6 +6,8 @@ import "jquery_ujs";
 import "jquery-star-rating";
 import "@hotwired/turbo-rails";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "font-awesome"
+
 
 
 

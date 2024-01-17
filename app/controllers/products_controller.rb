@@ -2,7 +2,7 @@
 
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
-  before_action :set_product, only: %i[show edit update destroy]
+  before_action :set_product, only: %i[show edit update destroy ]
 
   def show
     @comments = @product.comments.order(created_at: :desc)

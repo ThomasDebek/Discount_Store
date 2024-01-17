@@ -13,6 +13,21 @@ class CommentsController < ApplicationController
       redirect_to product_path(@product)
     end
   end
+
+
+  def upvote
+    @comment = @product.comments.find(params[:id])
+    @comment.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @comment = @product.comments.find(params[:id])
+    @comment.downvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+
   def edit
     @comment = @product.comments.find(params[:id])
   end
@@ -44,6 +59,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:rating, :body )
+    params.require(:comment).permit(:rating, :body, :upvote, :downvote )
   end
 end

@@ -25,15 +25,24 @@
           </p>
         </div>
 
+        <!-- comments/_comment.html.erb -->
         <div class="comment-actions d-flex justify-content-between align-items-center mt-2">
           <span class="d-flex">
-            <button class="btn btn-outline-info btn-sm mr-2">Like</button>
-            <% if  comment.user.present? && comment.user == current_user %>
+            <%= button_to upvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link" do %>
+              <%= fa_icon('thumbs-up') %>
+            <% end %>
+            <span class="likes-count"><%= comment.get_upvotes.size %></span>
+
+            <%= button_to downvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link" do %>
+              <%= fa_icon('thumbs-down') %>
+            <% end %>
+            <span class="unlikes-count"><%= comment.get_downvotes.size %></span>
+
+            <% if comment.user.present? && comment.user == current_user %>
               <%= button_to 'Usuń komentarz', [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" %>
               <%= link_to 'Edytuj komentarz', edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" %>
             <% end %>
           </span>
-          <span class="likes-count">15 Likes</span>
         </div>
       </div>
     <% end %>

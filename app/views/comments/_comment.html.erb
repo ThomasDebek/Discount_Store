@@ -29,20 +29,26 @@
         <div class="comment-actions d-flex justify-content-between align-items-center mt-2">
           <span class="d-flex">
             <%= button_to upvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link" do %>
-              <%= fa_icon('thumbs-up') %>
+              <%= fa_icon('thumbs-up fa-2x') %>
             <% end %>
             <span class="likes-count"><%= comment.get_upvotes.size %></span>
 
             <%= button_to downvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link" do %>
-              <%= fa_icon('thumbs-down') %>
+              <%= fa_icon('thumbs-down fa-2x') %>
             <% end %>
             <span class="unlikes-count"><%= comment.get_downvotes.size %></span>
-
-            <% if comment.user.present? && comment.user == current_user %>
-              <%= button_to 'Usuń komentarz', [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" %>
-              <%= link_to 'Edytuj komentarz', edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" %>
-            <% end %>
           </span>
+
+          <% if comment.user.present? && comment.user == current_user %>
+            <div class="ml-auto d-flex align-items-center"> <!-- Use "ml-auto" to push the following content to the right -->
+              <%= button_to upvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link" do %>
+                <%= fa_icon('trash fa-2x') %>
+              <% end %>
+              <%= button_to downvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link ml-2" do %>
+                <%= fa_icon('pencil fa-2x') %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

@@ -42,10 +42,10 @@
 
           <% if comment.user.present? && comment.user == current_user %>
             <div class="ml-auto d-flex align-items-center">
-              <%= link_to [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" do %>
+              <%= button_to [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" do %>
                 <i class="fa fa-trash"></i>
               <% end %>
-              <%= link_to edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" do %>
+              <%= button_to edit_product_comment_path(@product, comment), method: :get, class: "btn btn-outline-primary btn-sm" do %>
                 <i class="fa fa-pencil"></i>
               <% end %>
             </div>

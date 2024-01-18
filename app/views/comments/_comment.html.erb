@@ -42,11 +42,11 @@
 
           <% if comment.user.present? && comment.user == current_user %>
             <div class="ml-auto d-flex align-items-center">
-              <%= button_to upvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link ml-3" do %>
-                <i class="fa fa-trash fa-lg"></i>
+              <%= link_to [@product, comment], method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć ten komentarz?' }, class: "btn btn-outline-danger btn-sm mr-2" do %>
+                <i class="fa fa-trash"></i>
               <% end %>
-              <%= button_to downvote_product_comment_path(@product, comment), method: :post, class: "btn btn-link ml-3" do %>
-                <i class="fa fa-pencil fa-lg"></i>
+              <%= link_to edit_product_comment_path(@product, comment), class: "btn btn-outline-primary btn-sm" do %>
+                <i class="fa fa-pencil"></i>
               <% end %>
             </div>
           <% end %>

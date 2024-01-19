@@ -1,3 +1,4 @@
+<!-- products/_product.html.erb -->
 <div class="row row-cols-1 row-cols-md-3 g-4 align-items-stretch">
   <% @products.each do |product| %>
     <div class="col">
@@ -12,11 +13,17 @@
           <div class="d-flex justify-content-between align-items-center">
             <% if user_signed_in? && current_user == product.user %>
                 <span class="d-flex">
-                  <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning btn-sm mr-2' %>
-                  <%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm mr-2' %>
+                  <%= link_to edit_product_path(product), class: 'btn btn-warning btn-sm mr-2' do %>
+                    <i class="fa fa-pencil"></i>
+                  <% end %>
+                  <%= button_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm mr-2' do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
                 </span>
             <% end %>
-            <%= link_to 'Show', product_path(product), class: 'btn btn-primary btn-sm' %>
+            <%= link_to product_path(product), class: 'btn btn-info btn-sm' do %>
+              <i class="fa fa-search"></i>
+            <% end %>
           </div>
         </div>
       </div>
@@ -25,5 +32,4 @@
   <div class="pagination">
     <%= will_paginate @products, :page_links => false %>
   </div>
-
 </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'carts/show'
 
   devise_for :users
   get 'home/index'
@@ -25,4 +26,13 @@ Rails.application.routes.draw do
 
   resources :coupons
   resources :promotions
+
+
+  resources :carts, only: %i[show create destroy]
+  get    'cart', to: 'carts#show'
+  delete 'cart', to: 'carts#destroy'
+  post   'cart', to: 'carts#add', as: 'add_to_cart'
+
+
+
 end

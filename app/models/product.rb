@@ -18,4 +18,6 @@ class Product < ApplicationRecord
 
   acts_as_votable
 
+  has_many :cart_items, dependent: :destroy
+
 end

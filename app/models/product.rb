@@ -20,4 +20,10 @@ class Product < ApplicationRecord
 
   has_many :cart_items, dependent: :destroy
 
+
+  def main_image_path
+    image.attached? ? image : 'main_image_placeholder.png'
+  end
+
+
 end

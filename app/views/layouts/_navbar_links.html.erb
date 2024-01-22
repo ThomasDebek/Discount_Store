@@ -1,7 +1,6 @@
 <!-- app/views/layouts/_navbar.html.erb -->
 
 <div class="container">
-
   <div class="navbar-nav ms-auto">
     <% if user_signed_in? %>
       <%= link_to 'Welcome, ' + current_user.email + '!', edit_user_registration_path, class: 'nav-link' %>

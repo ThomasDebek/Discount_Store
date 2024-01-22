@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :initialize_cart
   def index
     @products = Product.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
 

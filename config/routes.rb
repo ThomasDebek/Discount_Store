@@ -24,8 +24,6 @@ Rails.application.routes.draw do
   end
   get 'comments/edit'
 
-  resources :coupons
-  resources :promotions
 
   get    'cart', to: 'carts#show'
   delete 'cart', to: 'carts#destroy'

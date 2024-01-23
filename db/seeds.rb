@@ -7,8 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Product.destroy_all
-Coupon.destroy_all
-Promotion.destroy_all
 User.destroy_all
 Brand.destroy_all
 Category.destroy_all
@@ -18,11 +16,6 @@ Category.destroy_all
 require 'faker'
 require 'open-uri'
 
-# Create regular users
-# db/seeds.rb
-# ...
-
-# Create regular users with shortened email
 10.times do
   email_prefix = Faker::Name.first_name.downcase
   User.create(email: "#{email_prefix}@gmail.com", password: 'secret')
@@ -33,21 +26,10 @@ end
 user1 = User.all.sample
 user2 = (User.all - [user1]).sample
 
-# Generate Coupons for the selected users
-coupon1 = Coupon.create(code: Faker::Alphanumeric.alphanumeric(number: 8), discount: 15, user: user1)
-
-coupon2 = Coupon.create(code: Faker::Alphanumeric.alphanumeric(number: 8), discount: 20, user: user2)
 
 # Create a fixed user "Dave"
 dave_user = User.create(email: 'dave@gmail.com', password: 'secret')
 
-# Generate a Coupon for Dave
-dave_coupon = Coupon.create(code: Faker::Alphanumeric.alphanumeric(number: 8), discount: 10, user: dave_user)
-
-# Generate Products and Promotions
-users = User.all
-
-# Zaktualizuj generowanie produktów
 users = User.all
 
 
@@ -72,7 +54,6 @@ brands = Brand.all
 
 
 9.times do
-  # Wybierz losowego użytkownika
   user = users.sample
   category = categories.sample
   brand = brands.sample
@@ -89,7 +70,6 @@ brands = Brand.all
       body: Faker::Lorem.paragraph
     )
 
-    Promotion.create(product: product, coupon: Coupon.all.sample)
     puts "Generating image for #{product.name}"
     downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{product.name.split.last}")
     product.image.attach(io: downloaded_image, filename: "mi_#{product.id}.png")

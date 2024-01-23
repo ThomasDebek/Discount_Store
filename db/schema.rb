@@ -82,15 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_21_220718) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "coupons", force: :cascade do |t|
-    t.string "code"
-    t.decimal "discount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_coupons_on_user_id"
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -102,15 +93,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_21_220718) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "promotions", force: :cascade do |t|
-    t.bigint "product_id", null: false
-    t.bigint "coupon_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["coupon_id"], name: "index_promotions_on_coupon_id"
-    t.index ["product_id"], name: "index_promotions_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -147,10 +129,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_21_220718) do
   add_foreign_key "cart_items", "products"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
-  add_foreign_key "coupons", "users"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
-  add_foreign_key "promotions", "coupons"
-  add_foreign_key "promotions", "products"
 end

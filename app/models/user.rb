@@ -8,4 +8,7 @@ class User < ApplicationRecord
 
 
   acts_as_votable
+
+
+  has_many :orders,  dependent: :nullify
 end

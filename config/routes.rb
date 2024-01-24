@@ -30,5 +30,7 @@ Rails.application.routes.draw do
   post   'cart', to: 'carts#add', as: 'add_to_cart'
 
 
+  resources :orders, only: %i[create]
+
 
 end

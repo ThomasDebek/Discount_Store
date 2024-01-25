@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  discount: 9.99
+  product: one
+  cart: one
 
 two:
-  code: MyString
-  discount: 9.99
+  product: two
+  cart: two

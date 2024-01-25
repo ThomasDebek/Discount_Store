@@ -1,9 +1,7 @@
 class Product < ApplicationRecord
   include PgSearch::Model
 
-  has_one :promotion
-  has_one :coupon, through: :promotion
-  has_one :user, through: :coupon
+ 
   belongs_to :user
   has_one_attached :image
   has_many :comments, dependent: :destroy
@@ -17,5 +15,13 @@ class Product < ApplicationRecord
   pg_search_scope :search_by_name, against: :name, using: { dmetaphone: {}, trigram: {}, tsearch: { prefix: true, any_word: true } }
 
   acts_as_votable
+
+  has_many :cart_items, dependent: :destroy
+
+
+  def main_image_path
+    image.attached? ? image : 'main_image_placeholder.png'
+  end
+
 
 end

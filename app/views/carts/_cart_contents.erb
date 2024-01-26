@@ -17,6 +17,7 @@
           </td>
         </tr>
       <% else %>
+
         <% @cart.cart_items.each do |cart_item| %>
           <%= form_for(cart_item) do |f| %>
             <tr>
@@ -29,6 +30,7 @@
             </tr>
           <% end %>
         <% end %>
+      
       <% end %>
       </tbody>
     </table>

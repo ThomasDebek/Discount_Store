@@ -6,7 +6,9 @@
       <tr>
         <th></th>
         <th scope="col" style="color: white;">Product</th>
+        <th scope="col" style="color: white;">Quantity</th>
         <th scope="col" style="color: white;">Price</th>
+        <th scope="col" style="color: white;">Total</th>
       </tr>
       </thead>
       <tbody>
@@ -17,19 +19,24 @@
           </td>
         </tr>
       <% else %>
+
         <% @cart.cart_items.each do |cart_item| %>
-          <tr>
-            <td>
-              <%= image_tag(cart_item.product.main_image_path, class: 'card-img-top', style: "width: 140px; height: 80px;") %>
-            </td>
-            <td class="product-name" style="color: white;">
-              <%= cart_item.product.name %>
-            </td>
-            <td style="color: white;">
-              <%= cart_item.product.price %>
-            </td>
-          </tr>
+          <%= form_for(cart_item) do |f| %>
+            <tr>
+              <td><%= image_tag(cart_item.product.main_image_path, width: "50x50", class: "mx-auto") %></td>
+              <td><%= link_to cart_item.product.name, cart_item.product %></td>
+              <td>
+                <%= f.select :quantity, options_for_select([1, 2, 3, 4, 5], cart_item.quantity), class: 'form-control' %>
+                <%= f.submit "Update", class: 'btn btn-sm btn-primary' %>
+              </td>
+              <td style="color: white;"><%= number_to_currency(cart_item.product.price) %></td>
+              <td style="color: white;"><%= number_to_currency(cart_item.total_price) %></td>
+
+              <td><%= link_to 'Delete', cart_item, method: :delete, data: { confirm: 'Are you sure' }, class: "btn btn-sm btn-danger" %></td>
+            </tr>
+          <% end %>
         <% end %>
+
       <% end %>
       </tbody>
     </table>
@@ -38,12 +45,10 @@
     <div>
       <h3>Total: $<%= @cart.total %></h3>
     </div>
+
     <div>
-      <%= button_to "Empty cart", cart_path(@cart), method: :delete, data: { confirm: "Do you really want to empty the cart?" },
-                    class: "btn btn-block btn-outline-danger" %>
-      <%= button_to 'Checkout', orders_path, method: :post, class: "btn btn-block  btn-outline-success" %>
-
-
+      <%= button_to "Empty cart", cart_path(@cart), method: :delete, data: { confirm: "Do you really want to empty the cart?" }, class: "btn btn-block btn-outline-danger" %>
+      <%= button_to '<i class="bi bi-cart-check"></i> Checkout'.html_safe, orders_path, method: :post, class: "btn btn-block btn-outline-success" %>
     </div>
     <div>
     </div>

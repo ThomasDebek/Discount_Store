@@ -7,6 +7,8 @@
         <th></th>
         <th scope="col" style="color: white;">Product</th>
         <th scope="col" style="color: white;">Price</th>
+        <th scope="col" style="color: white;">Subtotal</th>
+        <th scope="col" style="color: white;">Total</th>
       </tr>
       </thead>
       <tbody>
@@ -23,15 +25,18 @@
             <tr>
               <td><%= image_tag(cart_item.product.main_image_path, width: "50x50", class: "mx-auto") %></td>
               <td><%= link_to cart_item.product.name, cart_item.product %></td>
-              <td><%= f.select :quantity, options_for_select([1, 2, 3, 4, 5], cart_item.quantity), class: 'form-control' %> <%= f.submit "Update", class: 'btn btn-primary' %></td>
-              <td><%= number_to_currency(cart_item.product.price) %></td>
-              <td><%= number_to_currency(cart_item.total_price) %></td>
-              <td><%= link_to 'Delete', cart_item, method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-danger" %></td>
+              <td>
+                <%= f.select :quantity, options_for_select([1, 2, 3, 4, 5], cart_item.quantity), class: 'form-control' %>
+                <%= f.submit "Update", class: 'btn btn-sm btn-primary' %>
+              </td>
+              <td style="color: white;"><%= number_to_currency(cart_item.product.price) %></td>
+              <td style="color: white;"><%= number_to_currency(cart_item.total_price) %></td>
+
+              <td><%= link_to 'Delete', cart_item, method: :delete, data: { confirm: 'Are you sure' }, class: "btn btn-sm btn-danger" %></td>
             </tr>
           <% end %>
         <% end %>
 
-      
       <% end %>
       </tbody>
     </table>

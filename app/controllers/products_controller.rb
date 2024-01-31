@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   def show
     @comments = @product.comments.order(created_at: :desc)
     @show_sidebar = false
-    @presenter = ProductPresenter.new(@product)
   end
 
   def search

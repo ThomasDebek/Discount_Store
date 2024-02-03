@@ -10,6 +10,6 @@ class User < ApplicationRecord
   acts_as_votable
 
 
-  has_many :orders,  dependent: :nullify
+  has_many :orders,   dependent: :nullify
   has_many :cart_items, dependent: :destroy
 end

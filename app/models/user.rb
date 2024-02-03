@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
 
   has_many :orders,  dependent: :nullify
+  has_many :cart_items, dependent: :destroy
 end

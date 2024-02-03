@@ -4,4 +4,5 @@ class Order < ApplicationRecord
 
   enum state: { new: 'new', failed: 'failed', completed: 'completed' }, _suffix: :order
 
+
 end

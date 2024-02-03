@@ -5,43 +5,35 @@ class CreateOrder
   include Dry::Monads[:result, :do]
 
   def call(cart:, user:)
-    Order.transaction do
-      cart = yield validate_cart(cart).to_result
-      yield create_order(user)
-      clear_cart(cart)
+    cart = yield validate_cart(cart)
 
+    order = Order.new(state: :new, user: user)
+
+    if order.save
+      clear_cart(cart)
       Success('Order has been placed')
+    else
+      Failure('Placing order has failed')
     end
   end
 
   private
-  def clear_cart(cart)
-    return Failure('Cart is nil') unless cart
 
+  def validate_cart(cart)
+    if cart.empty?
+      Failure('Can\'t place order with an empty cart')
+    else
+      Success(cart)
+    end
+  end
+
+  def clear_cart(cart)
     cart.cart_items.destroy_all
 
     if cart.empty?
       Success(cart)
     else
       Failure('Cart could not be emptied')
-    end
-  end
-
-  def create_order(user)
-    order = Order.create(state: :new, user: user)
-
-    if order
-      Success(order)
-    else
-      Failure('Creating order has failed')
-    end
-  end
-
-  def validate_cart(cart)
-    if cart && cart.empty?
-      Failure('Can\'t place order with an empty cart')
-    else
-      Success(cart)
     end
   end
 

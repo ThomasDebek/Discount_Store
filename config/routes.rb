@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
 
   resources :orders, only: %i[create]
+  
   resources :cart_items, only: %i[create update destroy]
 
 

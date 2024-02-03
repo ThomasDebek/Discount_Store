@@ -13,15 +13,15 @@ class CartsController < ApplicationController
   end
 
   def add
-    product = Product.find(params[:product_id])
-    item_added = @cart.add_product(product)
-    if item_added.nil?
-      flash[:notice] = "#{product.name} is already in the cart"
+    result = AddProductToCart.new.call(product_id: params[:product_id], cart: @cart)
+
+    if result.success?
+      flash[:notice] = result.value!
+      redirect_to root_path
     else
-      item_added.save
-      flash[:notice] = "Added #{product.name} to the cart"
+      flash[:alert] = result.failure
+      redirect_to root_path
     end
-    redirect_back(fallback_location: root_path)
   end
 
 

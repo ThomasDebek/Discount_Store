@@ -6,33 +6,38 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+p "Delete all Data Base and create new...."
+
 Product.destroy_all
 User.destroy_all
 Brand.destroy_all
 Category.destroy_all
-
+Admin.destroy_all
 
 # db/seeds.rb
 require 'faker'
 require 'open-uri'
+
+
+Admin.create(
+  email: "admin@gmail.com",
+  password: "password"
+)
+
 
 10.times do
   email_prefix = Faker::Name.first_name.downcase
   User.create(email: "#{email_prefix}@gmail.com", password: 'secret')
 end
 
-
 # Get two random users
 user1 = User.all.sample
 user2 = (User.all - [user1]).sample
-
 
 # Create a fixed user "Dave"
 dave_user = User.create(email: 'dave@gmail.com', password: 'secret')
 
 users = User.all
-
-
 
 Category.destroy_all
 4.times do
@@ -50,8 +55,6 @@ end
 
 categories = Category.all
 brands = Brand.all
-
-
 
 9.times do
   user = users.sample

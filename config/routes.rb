@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  get 'carts/show'
+  namespace :admin do
+    get 'products/index'
+  end
+
+  devise_for :admins do
+    root 'products#index'
+  end
 
   devise_for :users
   get 'home/index'
   root 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
 
   resources :products do
     resources :comments do
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
   end
   get 'comments/edit'
 
-
+  get 'carts/show'
   get    'cart', to: 'carts#show'
   delete 'cart', to: 'carts#destroy'
   post   'cart', to: 'carts#add', as: 'add_to_cart'

@@ -21,7 +21,7 @@ require 'open-uri'
 
 Admin.create(
   email: "admin@gmail.com",
-  password: "password"
+  password: "secret"
 )
 
 

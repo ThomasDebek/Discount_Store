@@ -1,2 +1,24 @@
-<h1>Admin::Products#index</h1>
-<p>Find me in app/views/admin/products/index.html.erb</p>
+<h2>Products</h2>
+
+<table class="table">
+  <thead class="table-dark">
+  <tr>
+    <th scope="col">Img</th>
+    <th scope="col">Name</th>
+    <th scope="col">Price</th>
+    <th scope="col">Category</th>
+    <th scope="col">Brand</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= image_tag(product.main_image_path, width: "50x50", class: "mx-auto") %></td>
+      <td class="text-light"><%= product.name %></td>
+      <td class="text-light"><%= product.price %></td>
+      <td class="text-light"><%= product.category.name %></td>
+      <td class="text-light"><%= product.brand.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

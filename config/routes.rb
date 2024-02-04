@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'products/index'
-  end
-
-  devise_for :admins do
-    root 'products#index'
-  end
-
+  devise_for :admins
   devise_for :users
+
+  namespace :admin do
+    root 'products#index'
+    resources :products
+  end
+
+
   get 'home/index'
   root 'home#index'
   

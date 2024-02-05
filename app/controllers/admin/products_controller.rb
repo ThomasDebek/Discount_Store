@@ -2,12 +2,13 @@ class Admin::ProductsController < ApplicationController
 
   layout 'admin'
   before_action :authenticate_admin!
+  before_action :find_product, only: %i[edit update destroy]
+
   def index
     @products = Product.all
     @products = @products.filter_by_category(params[:category]) if params[:category].present?
     @products = @products.filter_by_brand(params[:brand]) if params[:brand].present?
   end
-
 
   def create
     @product = Product.new(product_params)
@@ -24,13 +25,10 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
   end
 
-
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
 
     if @product.update(product_params)
       flash[:notice] = "Product was successfully updated"
@@ -40,9 +38,7 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-
   def destroy
-    @product = Product.find(params[:id])
 
     if @product.destroy
       redirect_to admin_products_path
@@ -52,12 +48,14 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-
-
   private
 
   def product_params
     params.require(:product).permit(:name, :price, :image, :brand_id, :category_id)
+  end
+
+  def find_product
+    @product = Product.find(params[:id])
   end
 
 end

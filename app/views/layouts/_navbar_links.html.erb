@@ -2,6 +2,10 @@
 
 <div class="container">
   <div class="navbar-nav ms-auto">
+    <% if admin_session %>
+    <%= link_to 'Admin Panel', admin_root_path, class: 'nav-link'  %>
+      <% end  %>
+
     <% if user_signed_in? %>
      <%= link_to 'Welcome, ' + current_user.email + '!', edit_user_registration_path, class: 'nav-link' %>
       <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %>

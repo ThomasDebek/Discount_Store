@@ -8,6 +8,18 @@ class Admin::ProductsController < ApplicationController
     @products = @products.filter_by_brand(params[:brand]) if params[:brand].present?
   end
 
+
+  def create
+    @product = Product.new(product_params)
+
+    if @product.save
+      flash[:notice] = "Product added successfully"
+      redirect_to admin_products_path
+    else
+      render :new
+    end
+  end
+
   def new
     @product = Product.new
   end
@@ -28,16 +40,19 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def create
-    @product = Product.new(product_params)
 
-    if @product.save
-      flash[:notice] = "Product added successfully"
+  def destroy
+    @product = Product.find(params[:id])
+
+    if @product.destroy
       redirect_to admin_products_path
+      flash[:notice] = "Product was been deleted"
     else
-      render :new
+      flash[:alert] = "Something is wrong"
     end
   end
+
+
 
   private
 

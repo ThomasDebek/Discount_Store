@@ -1,0 +1,14 @@
+<h2 class="text-center text-success py-3">Your Awesome Product</h2>
+
+<%= render partial: 'admin/products/form' %>
+
+<% if @product.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Validation errors:</h4>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

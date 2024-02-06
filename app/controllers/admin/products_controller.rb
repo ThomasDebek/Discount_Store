@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
 
   layout 'admin'
   before_action :authenticate_admin!
-  before_action :find_product, only: %i[edit update destroy]
+  before_action :find_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all
@@ -19,6 +19,10 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @presenter = ProductPresenter.new(@product)
   end
 
   def new

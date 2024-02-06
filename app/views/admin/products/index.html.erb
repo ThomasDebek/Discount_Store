@@ -4,7 +4,6 @@
 <%= link_to "Add Product", new_admin_product_path, class: "btn btn-info", id: "add-product-button" %>
 
 
-
 <table class="table">
   <thead class="table-dark">
   <tr>
@@ -13,6 +12,7 @@
     <th scope="col">Price</th>
     <th scope="col">Category</th>
     <th scope="col">Brand</th>
+    <th scope="col">Actions</th>
   </tr>
   </thead>
   <tbody>
@@ -24,11 +24,14 @@
       <td class="text-light"><%= product.category.name %></td>
       <td class="text-light"><%= product.brand.name %></td>
 
-      <td><%= link_to "edit", edit_admin_product_path(product),
-                    class: "btn btn-outline-secondary btn-sm", id: "edit-product-#{product.id}-button" %></td>
-      <td><%= button_to "delete", admin_product_path(product), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm", id: "delete-product-#{product.id}-button" %></td>
+      <td><%= link_to "edit", edit_admin_product_path(product), class: "btn btn-outline-secondary btn-sm me-2", id: "edit-product-#{product.id}-button" %></td>
+      <td><%= button_to "delete", admin_product_path(product), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm me-2", id: "delete-product-#{product.id}-button" %></td>
+      <td><%= link_to "show", admin_product_path(product), class: "btn btn-outline-primary btn-sm", id: "show-product-#{product.id}-button" %></td>
 
     </tr>
   <% end %>
   </tbody>
 </table>
+
+
+

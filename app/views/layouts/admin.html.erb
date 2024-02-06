@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>DiscountStore</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,22 +11,23 @@
   <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag 'font-awesome' %>
 </head>
+</html>
 
 <body>
 <%= render 'admin/navigation' %>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-9">
+<div class="container-fluid d-flex flex-column">
+  <div class="row" >
+    <div class="col-md-2 pt-4 px-5">
+      <%= render 'admin/sidebar_admin' %>
+    </div>
+    <div class="col-md-7 pt-3 px-3">
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
     </div>
-    <div class="col-lg-3">
+    <div class="col-md-2 pt-4 px-5">
       <%= render 'admin/products/sidebar' %>
     </div>
-
   </div>
 </div>
 </body>
 
-</html>

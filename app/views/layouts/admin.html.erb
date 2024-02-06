@@ -11,13 +11,23 @@
 
   <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag 'font-awesome' %>
-
 </head>
 
 <body>
-<strong>ADMIN PANEL</strong>
 <%= render 'admin/navigation' %>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+    </div>
+    <div class="col-lg-3">
+      <%= render 'admin/products/sidebar' %>
+    </div>
+
+  </div>
+</div>
 </body>
 
 </html>

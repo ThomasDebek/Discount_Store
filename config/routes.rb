@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
+    resources :categories
+    get 'categories/index'
+    get 'categories/show'
+    get 'categories/edit'
     root 'products#index'
     resources :products
+
   end
 
 

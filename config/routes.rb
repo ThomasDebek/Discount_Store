@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories
+    resources :brands
+    resources :products
     get 'categories/index'
     get 'categories/show'
     get 'categories/edit'
     root 'products#index'
-    resources :products
+
 
   end
 

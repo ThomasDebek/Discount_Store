@@ -33,7 +33,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    
+
     if @product.update(product_params)
       flash[:notice] = "Product was successfully updated"
       redirect_to admin_products_path

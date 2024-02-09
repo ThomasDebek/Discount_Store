@@ -1,27 +1,27 @@
-<!-- app/views/admin/categories/index.html.erb -->
-<h1>Brands</h1>
+<h2>Brands</h2>
 
-<table>
-  <thead>
+<%= link_to "Add Brand", new_admin_brand_path, class: "btn btn-info", id: "add-brand-button" %>
+
+<table class="table">
+  <thead class="table-dark">
   <tr>
-    <th>Name</th>
-    <th>Actions</th>
+    <th scope="col">Name</th>
+    <th scope="col" class="text-end">Actions</th>
   </tr>
   </thead>
   <tbody>
   <% @brands.each do |brand| %>
     <tr>
-      <td><%= brand.name %></td>
-      <td>
-        <%= link_to 'Edit', edit_admin_brand_path(brand) %>
-        <%= button_to 'Delete', admin_brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <td class="text-light"><%= brand.name %></td>
+      <td class="text-end">
+        <%= link_to "Edit", edit_admin_brand_path(brand), class: "btn btn-outline-secondary btn-sm me-2", id: "edit-product-#{brand.id}-button" %>
+        <%= link_to 'Delete', admin_brand_path(brand), data: { turbo: true, turbo_method: :delete }, class: "btn btn-outline-danger btn-sm me-2" %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Brand', new_admin_brand_path %>
+<%= link_to 'Back', admin_root_path, class: "btn btn-secondary text-white" %>
 
 
-<%= link_to 'Back', admin_root_path %>

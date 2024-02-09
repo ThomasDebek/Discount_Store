@@ -9,6 +9,15 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "font-awesome"
 
 
+import Rails from "@rails/ujs";
+Rails.start();
+
+
+
+
+
+
+
 
 
 const starsContainer = document.querySelector('.rating-stars');
@@ -48,9 +57,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
-
-import Rails from "@rails/ujs";
-Rails.start();
 
 

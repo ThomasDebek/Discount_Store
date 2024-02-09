@@ -87,3 +87,5 @@ end
 gem "faker", "~> 3.2"
 
 gem "devise", "~> 4.9"
+
+gem "hotwire-rails", "~> 0.1.3"

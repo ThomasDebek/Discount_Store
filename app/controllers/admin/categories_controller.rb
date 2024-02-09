@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   layout 'admin'
   before_action :authenticate_admin!
-  before_action :find_category, only: %i[show edit update destroy ]
+  before_action :find_category, only: %i[edit update destroy ]
   def index
     @categories = Category.all
     @products = Product.all
@@ -23,8 +23,6 @@ class Admin::CategoriesController < ApplicationController
 
   end
 
-  def show
-  end
 
   def edit
     @category = Category.find(params[:id])

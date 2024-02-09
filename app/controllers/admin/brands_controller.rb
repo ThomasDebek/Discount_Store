@@ -1,14 +1,12 @@
 class Admin::BrandsController < ApplicationController
   layout 'admin'
   before_action :authenticate_admin!
-  before_action :find_brand, only: %i[show edit update destroy]
+  before_action :find_brand, only: %i[edit update destroy]
 
   def index
     @brands = Brand.all
   end
 
-  def show
-  end
 
   def new
     @brand = Brand.new

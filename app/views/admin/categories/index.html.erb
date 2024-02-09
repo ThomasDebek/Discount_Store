@@ -14,11 +14,8 @@
     <tr>
       <td class="text-light"><%= category.name %></td>
       <td class="text-end">
-        <%= link_to "Show", admin_category_path(category), class: "btn btn-outline-primary btn-sm me-2", id: "show-product-#{category.id}-button" %>
         <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-secondary btn-sm me-2", id: "edit-product-#{category.id}-button" %>
-        <%= link_to 'Delete', admin_category_path(category),turbo_method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm me-2" %>
-        <%= link_to 'Deletes', admin_category_path(category), data: { turbo: true, turbo_method: :delete }, class: "nav-link" %>
-
+        <%= link_to 'Delete', admin_category_path(category), data: { turbo: true, turbo_method: :delete }, class: "btn btn-outline-danger btn-sm me-2" %>
       </td>
     </tr>
   <% end %>

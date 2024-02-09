@@ -13,7 +13,6 @@
     <tr>
       <td><%= brand.name %></td>
       <td>
-        <%= link_to 'Show', admin_brand_path(brand) %>
         <%= link_to 'Edit', edit_admin_brand_path(brand) %>
         <%= button_to 'Delete', admin_brand_path(brand), method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>

@@ -1,4 +1,5 @@
 class Admin::BrandsController < ApplicationController
+  layout 'admin'
   before_action :authenticate_admin!
   before_action :find_brand, only: %i[show edit update destroy]
 

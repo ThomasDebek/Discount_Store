@@ -1,25 +1,26 @@
-<!-- app/views/admin/categories/index.html.erb -->
-<h1>Categories</h1>
+<h2>Categories</h2>
 
-<table>
-  <thead>
+<%= link_to "Add Category", new_admin_category_path, class: "btn btn-info", id: "add-category-button" %>
+
+<table class="table">
+  <thead class="table-dark">
   <tr>
-    <th>Name</th>
-    <th>Actions</th>
+    <th scope="col">Name</th>
+    <th scope="col" class="text-end">Actions</th>
   </tr>
   </thead>
   <tbody>
   <% @categories.each do |category| %>
     <tr>
-      <td><%= category.name %></td>
-      <td>
-        <%= link_to 'Show', admin_category_path(category) %>
-        <%= link_to 'Edit', edit_admin_category_path(category) %>
-        <%= button_to 'Delete', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <td class="text-light"><%= category.name %></td>
+      <td class="text-end">
+        <%= link_to "Show", admin_category_path(category), class: "btn btn-outline-primary btn-sm me-2", id: "show-product-#{category.id}-button" %>
+        <%= link_to "Edit", edit_admin_category_path(category), class: "btn btn-outline-secondary btn-sm me-2", id: "edit-product-#{category.id}-button" %>
+        <%= link_to 'Delete', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm text-white" %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Category', new_admin_category_path %>
+<%= link_to 'Back', admin_root_path, class: "btn btn-secondary text-white" %>

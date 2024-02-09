@@ -1,8 +1,10 @@
 class Admin::CategoriesController < ApplicationController
+  layout 'admin'
   before_action :authenticate_admin!
   before_action :find_category, only: %i[show edit update destroy ]
   def index
     @categories = Category.all
+    @products = Product.all
   end
 
   def new

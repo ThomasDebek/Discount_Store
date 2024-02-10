@@ -15,6 +15,7 @@ class CreateOrder
   end
 
   private
+
   def clear_cart(cart)
     return Failure('Cart is nil') unless cart
 

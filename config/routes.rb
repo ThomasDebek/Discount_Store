@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
+    get 'orders/index'
     resources :categories
     resources :brands
     resources :products

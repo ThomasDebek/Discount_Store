@@ -13,6 +13,7 @@ User.destroy_all
 Brand.destroy_all
 Category.destroy_all
 Admin.destroy_all
+Order.destroy_all
 
 # db/seeds.rb
 require 'faker'
@@ -80,3 +81,10 @@ brands = Brand.all
     puts "Failed to create product: #{product.errors.full_messages.join(', ')}"
   end
 end
+
+
+5.times do
+  Order.create(state: rand(1..3), user: users.sample)
+end
+
+

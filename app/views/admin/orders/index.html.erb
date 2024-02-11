@@ -19,6 +19,11 @@
       <td style="color: white;"><%= order.user.email %></td>
       <td style="color: white;"><%= order.state %></td>
       <td style="color: white;"><%= order.created_at %></td>
+      <td>
+        <!-- Przyciski z takimi samymi klasami jak w sekcji kategorii -->
+        <button type="button" class="btn btn-outline-secondary btn-sm me-2" id="edit-order-<%= order.id %>-button">Edytuj</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" id="delete-order-<%= order.id %>-button">Usuń</button>
+      </td>
     </tr>
   <% end %>
   </tbody>

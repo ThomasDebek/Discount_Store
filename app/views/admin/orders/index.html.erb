@@ -18,11 +18,11 @@
       <th scope="row" class="product-name" style="color: white;"><%= order.id %></th>
       <td style="color: white;"><%= order.user.email %></td>
       <td style="color: white;"><%= order.state %></td>
-      <td style="color: white;"><%= order.created_at.localtime.strftime("%Y-%m-%d %H:%M:%S") %></td>
+      <td style="color: white;"><%= order.created_at.localtime.strftime("%Y-%m-%d %H:%M")  %></td>
 
       <td>
         <button type="button" class="btn btn-outline-secondary btn-sm me-2" id="edit-order-<%= order.id %>-button">Edytuj</button>
-        <button type="button" class="btn btn-outline-danger btn-sm" id="delete-order-<%= order.id %>-button">Usuń</button>
+        <%= link_to 'Delete', admin_order_path(order), data: { turbo: true, turbo_method: :delete}, class: "btn btn-outline-danger btn-sm me-2" %>
       </td>
     </tr>
   <% end %>

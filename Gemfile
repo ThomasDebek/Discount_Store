@@ -12,6 +12,7 @@ gem 'bootstrap-icons', '~> 1.0'
 gem 'acts_as_votable', '~> 0.14.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'dry-monads', '~> 1.6'
+gem 'pagy', '~> 6.4', '>= 6.4.3'
 
 
 

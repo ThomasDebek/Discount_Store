@@ -1,14 +1,18 @@
 class Admin::OrdersController < ApplicationController
   layout 'admin'
-  before_action :find_order, only: %i[destroy]
+  before_action :find_order, only: %i[destroy show]
   def index
+    @orders = Order.order(created_at: :desc)
+  end
+
+  def show
     @orders = Order.order(created_at: :desc)
   end
 
   def destroy
     @order.destroy
     flash[:notice] = "Order was been deleted"
-    redirect_to admin_order_path
+    redirect_to admin_orders_path
   end
 
   private

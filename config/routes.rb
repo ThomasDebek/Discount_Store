@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :brands
     resources :products
-    resources :orders, only: %i[index destroy]
+    resources :orders, only: %i[index show destroy]
     get 'categories/index'
     get 'categories/show'
     get 'categories/edit'

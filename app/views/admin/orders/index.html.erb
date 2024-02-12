@@ -21,10 +21,13 @@
       <td style="color: white;"><%= order.created_at.localtime.strftime("%Y-%m-%d %H:%M")  %></td>
 
       <td>
-        <button type="button" class="btn btn-outline-secondary btn-sm me-2" id="edit-order-<%= order.id %>-button">Edytuj</button>
+        <%= link_to "Show", admin_order_path(order), class: "btn btn-outline-secondary btn-sm me-2" %>
         <%= link_to 'Delete', admin_order_path(order), data: { turbo: true, turbo_method: :delete}, class: "btn btn-outline-danger btn-sm me-2" %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+
+

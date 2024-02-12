@@ -2,7 +2,7 @@ class Admin::OrdersController < ApplicationController
   layout 'admin'
   before_action :find_order, only: %i[destroy show]
   def index
-    @orders = Order.order(created_at: :desc)
+    @pagy, @orders = pagy(Order.all, items: 4)
   end
 
   def show

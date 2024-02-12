@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include Pagy::Backend
+
   def initialize_cart
     @cart = if session[:cart_id].present?
               Cart.find_by(id: session[:cart_id]) || Cart.create

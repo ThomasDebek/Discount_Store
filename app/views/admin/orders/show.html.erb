@@ -3,6 +3,7 @@
     <%= render partial: "order_details", locals: {order: @order} %>
   </div>
   <div class="col-md-4">
+    <%= render partial: "order_items", locals: {order: @order, order_items: @order.order_items.includes(:product)} %>
   </div>
 </div>
 

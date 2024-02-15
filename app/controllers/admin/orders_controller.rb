@@ -6,7 +6,8 @@ class Admin::OrdersController < ApplicationController
   end
 
   def show
-    @orders = Order.order(created_at: :desc)
+    @order = Order.find(params[:id])
+    @order_items = @order.order_items.includes(:product)
   end
 
   def destroy

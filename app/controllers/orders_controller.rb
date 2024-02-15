@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action :initialize_cart
   def create
     result = CreateOrder.new.call(cart: @cart, user: current_user)
 

@@ -3,19 +3,7 @@ class CartItemsController < ApplicationController
   before_action :set_cart_item, only: %i[update destroy]
   before_action :find_product, only: %i[create]
   before_action :authenticate_user!
-
-  def create
-    cart_item = AddProduct.new.call(product: @product, cart: @cart)
-    if cart_item.quantity > 5
-      flash[:notice] = 'your basket may only have five products'
-      redirect_to root_path
-    else
-      cart_item.save
-      flash[:notice] = 'Your cart is update'
-      redirect_to @cart
-    end
-  end
-
+  
   def update
     if @cart_item.update(cart_item_params)
       redirect_to @cart, flash: { notice: 'Your cart is update' }

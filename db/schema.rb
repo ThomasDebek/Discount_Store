@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_18_204723) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_18_212514) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "fuzzystrmatch"
   enable_extension "pg_trgm"
@@ -114,9 +114,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_204723) do
 
   create_table "payments", force: :cascade do |t|
     t.bigint "order_id", null: false
-    t.string "state"
+    t.string "state", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "aasm_state"
     t.index ["order_id"], name: "index_payments_on_order_id"
   end
 

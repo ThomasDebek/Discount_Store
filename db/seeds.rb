@@ -14,6 +14,7 @@ Brand.destroy_all
 Category.destroy_all
 Admin.destroy_all
 Order.destroy_all
+Payment.destroy_all
 
 # db/seeds.rb
 require 'faker'
@@ -84,7 +85,9 @@ end
 
 
 5.times do
-  Order.create(state: rand(1..3), user: users.sample)
+  user = users.sample
+  Order.create(state: rand(1..3), user: user)
+  Payment.create(order: Order.last)
 end
 
 

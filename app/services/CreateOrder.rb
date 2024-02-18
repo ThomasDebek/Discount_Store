@@ -9,6 +9,7 @@ class CreateOrder
       cart = yield validate_cart(cart)
       order = yield create_order(user)
       yield add_products_to_order(order, cart)
+      yield link_payment_to_order(order)
 
       yield clear_cart(cart)
 
@@ -19,12 +20,11 @@ class CreateOrder
 
   private
 
-  def clear_cart(cart)
-    cart.cart_items.destroy_all
+  def validate_cart(cart)
     if cart.empty?
-      Success(cart)
+      Failure('Can\'t place order with an empty cart')
     else
-      Failure('Cart could not be emptied')
+      Success(cart)
     end
   end
 
@@ -38,6 +38,7 @@ class CreateOrder
     end
   end
 
+
   def add_products_to_order(order, cart)
     cart.cart_items.each do |cart_item|
       OrderItem.create(product: cart_item.product, order: order)
@@ -50,14 +51,27 @@ class CreateOrder
     end
   end
 
+  def link_payment_to_order(order)
+    payment = Payment.create(order: order)
 
-  def validate_cart(cart)
-    if cart.empty?
-      Failure('Can\'t place order with an empty cart')
+    if payment
+      Success(payment)
     else
-      Success(cart)
+      Failure('Linking payment to order has failed')
     end
   end
+
+
+
+  def clear_cart(cart)
+    cart.cart_items.destroy_all
+    if cart.empty?
+      Success(cart)
+    else
+      Failure('Cart could not be emptied')
+    end
+  end
+
 
 
 end

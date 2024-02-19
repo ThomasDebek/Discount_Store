@@ -17,3 +17,17 @@
   </div>
   <span class="order-state text-muted"><%= payment.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
 </li>
+
+<% StateService.new(payment).possible_events.tap do |events| %>
+  <% if events.include? :complete %>
+    <div>
+      <%= link_to "Complete", admin_complete_payment_path(payment), method: :patch, class: "btn btn-outline-success btn-block" %>
+    </div>
+  <% end %>
+  <% if events.include? :fail %>
+    <div>
+      <%= link_to "Fail", admin_fail_payment_path(payment), method: :patch, class: "btn btn-outline-danger btn-block" %>
+    </div>
+  <% end %>
+<% end %>
+

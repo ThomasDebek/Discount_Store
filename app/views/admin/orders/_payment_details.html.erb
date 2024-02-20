@@ -19,15 +19,18 @@
 </li>
 
 <% StateService.new(payment).possible_events.tap do |events| %>
-  <% if events.include? :complete %>
-    <div>
-      <%= link_to "Complete", admin_complete_payment_path(payment), method: :patch, class: "btn btn-outline-success btn-block" %>
-    </div>
-  <% end %>
-  <% if events.include? :fail %>
-    <div>
-      <%= link_to "Fail", admin_fail_payment_path(payment), method: :patch, class: "btn btn-outline-danger btn-block" %>
-    </div>
+  <% if events.any? %>
+    <li class="list-group-item d-flex justify-content-between lh-condensed payment-events">
+      <% if events.include? :complete %>
+        <div>
+          <%= link_to "Complete", admin_complete_payment_path(payment), method: :patch, class: "btn btn-outline-success btn-block complete-payment" %>
+        </div>
+      <% end %>
+      <% if events.include? :fail %>
+        <div>
+          <%= link_to "Fail", admin_fail_payment_path(payment), method: :patch, class: "btn btn-outline-danger btn-block fail-payment" %>
+        </div>
+      <% end %>
+    </li>
   <% end %>
 <% end %>
-

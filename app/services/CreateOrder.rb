@@ -61,8 +61,6 @@ class CreateOrder
     end
   end
 
-
-
   def clear_cart(cart)
     cart.cart_items.destroy_all
     if cart.empty?
@@ -71,7 +69,4 @@ class CreateOrder
       Failure('Cart could not be emptied')
     end
   end
-
-
-
 end

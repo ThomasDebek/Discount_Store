@@ -12,10 +12,12 @@ Rails.application.routes.draw do
     get 'categories/edit'
     root 'products#index'
 
+    resources :payments do
 
-    patch 'payments/:id/complete', to: "payments#complete", as: :complete_payment
-    patch 'payments/:id/fail', to: "payments#fail", as: :fail_payment
+      patch 'payments/:id/complete', to: "payments#complete", as: :complete_payment
+      patch 'payments/:id/fail', to: "payments#fail", as: :fail_payment
 
+    end
   end
 
   get 'home/index'

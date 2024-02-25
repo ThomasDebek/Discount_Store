@@ -1,4 +1,4 @@
-class StateService
+class Payment::StateService
   include AASM
   attr_reader :payment
 
@@ -36,4 +36,3 @@ class StateService
     payment.update!(state: aasm.to_state)
   end
 end
-

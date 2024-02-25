@@ -13,7 +13,7 @@ class PaymentDecorator < Draper::Decorator
   end
 
   def events_buttons
-    possible_events = StateService.new(object).possible_events
+    possible_events = Payment::StateService.new(object).possible_events
     h.concat complete_button(possible_events)
     h.concat fail_button(possible_events)
     h.concat not_available(possible_events)

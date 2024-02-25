@@ -4,7 +4,7 @@ class Admin::PaymentsController < ApplicationController
   before_action :set_payment, only: %i[complete fail]
 
   def complete
-    if StateService.new(@payment).complete!
+    if Payment::StateService.new(@payment).complete!
       flash[:notice] = 'Payment completed'
     else
       flash[:alert] = 'Can\'t complete payment'
@@ -13,7 +13,7 @@ class Admin::PaymentsController < ApplicationController
   end
 
   def fail
-    if StateService.new(@payment).fail!
+    if Payment::StateService.new(@payment).fail!
       flash[:notice] = 'Payment failed'
     else
       flash[:alert] = 'Can\'t fail payment'

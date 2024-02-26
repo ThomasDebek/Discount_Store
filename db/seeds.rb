@@ -15,6 +15,10 @@ Category.destroy_all
 Admin.destroy_all
 Order.destroy_all
 Payment.destroy_all
+CartItem.destroy_all
+Comment.destroy_all
+Payment.destroy_all
+OrderItem.destroy_all
 
 # db/seeds.rb
 require 'faker'

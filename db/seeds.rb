@@ -51,7 +51,9 @@ Category.destroy_all
   Category.create(
     name: Faker::Commerce.department(max: 1)
   )
+  print '✔'
 end
+puts '✅'
 
 Brand.destroy_all
 4.times do

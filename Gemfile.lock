@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    a9n (1.5.0)
     aasm (5.5.0)
       concurrent-ruby (~> 1.0)
     actioncable (7.0.8)
@@ -293,6 +294,7 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
+  a9n (~> 1.5)
   aasm (~> 5.5)
   acts_as_votable (~> 0.14.0)
   bootsnap

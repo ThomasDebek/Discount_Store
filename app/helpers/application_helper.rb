@@ -23,3 +23,4 @@ module ApplicationHelper
     @weather_presenter ||= WeatherPresenter.new(weather_data)
   end
 end
+

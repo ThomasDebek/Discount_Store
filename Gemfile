@@ -15,6 +15,7 @@ gem 'dry-monads', '~> 1.6'
 gem 'pagy', '~> 6.4', '>= 6.4.3'
 gem 'aasm', '~> 5.5'
 gem 'draper', '~> 4.0'
+gem 'a9n', '~> 1.5'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

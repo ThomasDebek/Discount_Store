@@ -50,3 +50,6 @@ Things you may want to cover:
 <% else %>
 <%= link_to 'Dodaj komentarz', new_user_session_path, class: 'btn btn-success btn-sm rounded-pill' %>
 <% end %>
+
+
+

@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <%= link_to 'Home Store', root_path, class: 'navbar-brand' %>
-
+    <%= render partial: 'weather/show' %>
     <div class="navbar-nav ms-auto">
 
       <% if admin_signed_in? %>

@@ -88,6 +88,9 @@ GEM
       sassc-rails (>= 2.0.0)
     bootstrap-icons (1.0.14)
       nokogiri (~> 1)
+    bootstrap5-kaminari-views (0.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -312,6 +315,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.0.2)
   bootstrap-icons (~> 1.0)
+  bootstrap5-kaminari-views
   capybara
   debug
   devise (~> 4.9)

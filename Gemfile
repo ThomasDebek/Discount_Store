@@ -17,6 +17,7 @@ gem 'aasm', '~> 5.5'
 gem 'draper', '~> 4.0'
 gem 'a9n', '~> 1.5'
 gem 'kaminari', '~> 1.2'
+gem 'bootstrap5-kaminari-views'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

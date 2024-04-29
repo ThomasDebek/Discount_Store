@@ -1,3 +1,3 @@
 module Admin::OrdersHelper
-  include Pagy::Frontend
+  #include Pagy::Frontend
 end

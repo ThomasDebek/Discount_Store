@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  include PgSearch::Model
+   include PgSearch::Model
 
  
   belongs_to :user, optional: true

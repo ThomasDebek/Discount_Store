@@ -65,7 +65,7 @@ end
 categories = Category.all
 brands = Brand.all
 
-9.times do
+25.times do
   user = users.sample
   category = categories.sample
   brand = brands.sample

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   root 'home#index'
+  resources :home
 
   resources :products do
     resources :comments do

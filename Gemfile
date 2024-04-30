@@ -12,10 +12,14 @@ gem 'bootstrap-icons', '~> 1.0'
 gem 'acts_as_votable', '~> 0.14.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'dry-monads', '~> 1.6'
-gem 'pagy', '~> 6.4', '>= 6.4.3'
+
+
 gem 'aasm', '~> 5.5'
 gem 'draper', '~> 4.0'
 gem 'a9n', '~> 1.5'
+
+gem 'kaminari', '~> 1.2'
+gem 'bootstrap5-kaminari-views'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -89,4 +93,5 @@ end
 
 gem "faker", "~> 3.2"
 gem "devise", "~> 4.9"
-gem "hotwire-rails", "~> 0.1.3"
+
+

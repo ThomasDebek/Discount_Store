@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  include Pagy::Backend
+  #include Pagy::Backend
 
   def initialize_cart
     @cart = if session[:cart_id].present?

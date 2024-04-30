@@ -1,18 +1,18 @@
-<!-- app/views/home/index.html.erb -->
-<style>
-    .card-img-top {
-        object-fit: cover;
-        height: 200px; /* Ustaw żądany rozmiar obrazu */
-    }
-</style>
+<div id="products">
+  <%= turbo_stream_from :products %>
 
-<div class="container mt-4">
-  <h1 class="display-4">Welcome to the Discount Store!</h1>
-
-  <% if user_signed_in? %>
-    <%= link_to 'New Product', new_product_path, class: 'btn btn-primary my-2' %>
-  <% end %>
-
-  <h2 class="mt-4">Products</h2>
-  <%= render 'home/listing_products' %>
+  <div id="infinity_scroll">
+    <%= turbo_frame_tag "paginate_page_#{@products.current_page}" do %>
+      <div class="row row-cols-1 row-cols-md-3 g-4 align-items-stretch">
+        <%= render partial: 'home/listing_products', collection: @products, as: :product %>
+      </div>
+      <% if @products.next_page %>
+        <%= turbo_frame_tag "paginate_page_#{@products.next_page}", src: home_index_path(page: @products.next_page), loading: 'lazy' do %>
+          Loading...
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+
+<%= link_to "New book", new_product_path %>

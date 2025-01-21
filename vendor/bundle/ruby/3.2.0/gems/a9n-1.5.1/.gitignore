@@ -1,0 +1,14 @@
+*.gem
+.bundle
+.config
+.yardoc
+_yardoc
+coverage
+doc/
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+tmp
+.coveralls.yml
+spec/examples.txt

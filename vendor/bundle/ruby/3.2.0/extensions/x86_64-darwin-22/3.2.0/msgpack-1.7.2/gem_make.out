@@ -14,10 +14,10 @@ checking for whether -DSTR_UMINUS_DEDUPE_FROZEN=1 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/msgpack-1.7.2/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-w0l28k sitelibdir\=./.gem.20241228-13560-w0l28k clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-dhx9wb sitelibdir\=./.gem.20250206-40810-dhx9wb clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/msgpack-1.7.2/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-w0l28k sitelibdir\=./.gem.20241228-13560-w0l28k
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-dhx9wb sitelibdir\=./.gem.20250206-40810-dhx9wb
 compiling buffer.c
 compiling buffer_class.c
 compiling extension_value_class.c
@@ -35,8 +35,8 @@ ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/msgpack-1.7.2/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-w0l28k sitelibdir\=./.gem.20241228-13560-w0l28k install
-/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241228-13560-w0l28k/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-dhx9wb sitelibdir\=./.gem.20250206-40810-dhx9wb install
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20250206-40810-dhx9wb/msgpack
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/msgpack-1.7.2/ext/msgpack
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-w0l28k sitelibdir\=./.gem.20241228-13560-w0l28k clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-dhx9wb sitelibdir\=./.gem.20250206-40810-dhx9wb clean

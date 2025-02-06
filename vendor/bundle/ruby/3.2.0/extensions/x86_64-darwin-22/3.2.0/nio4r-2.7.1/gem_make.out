@@ -14,10 +14,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.1/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-tsj5fy sitelibdir\=./.gem.20241228-13560-tsj5fy clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-9gacgx sitelibdir\=./.gem.20250206-40810-9gacgx clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.1/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-tsj5fy sitelibdir\=./.gem.20241228-13560-tsj5fy
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-9gacgx sitelibdir\=./.gem.20250206-40810-9gacgx
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -277,8 +277,8 @@ ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.1/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-tsj5fy sitelibdir\=./.gem.20241228-13560-tsj5fy install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20241228-13560-tsj5fy
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-9gacgx sitelibdir\=./.gem.20250206-40810-9gacgx install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20250206-40810-9gacgx
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/nio4r-2.7.1/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-tsj5fy sitelibdir\=./.gem.20241228-13560-tsj5fy clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-9gacgx sitelibdir\=./.gem.20250206-40810-9gacgx clean

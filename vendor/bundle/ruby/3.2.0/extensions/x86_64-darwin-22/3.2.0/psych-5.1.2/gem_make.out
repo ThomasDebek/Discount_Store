@@ -5,13 +5,13 @@ checking for yaml_get_version() in -lyaml... yes
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-xjm2id sitelibdir\=./.gem.20241228-13560-xjm2id clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-758n0v sitelibdir\=./.gem.20250206-40810-758n0v clean
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-xjm2id sitelibdir\=./.gem.20241228-13560-xjm2id
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-758n0v sitelibdir\=./.gem.20250206-40810-758n0v
 compiling psych.c
 compiling psych_emitter.c
 compiling psych_parser.c
@@ -22,11 +22,11 @@ ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2', '-lyaml'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-xjm2id sitelibdir\=./.gem.20241228-13560-xjm2id install
-/usr/bin/install -c -m 0755 psych.bundle ./.gem.20241228-13560-xjm2id
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-758n0v sitelibdir\=./.gem.20250206-40810-758n0v install
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20250206-40810-758n0v
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-xjm2id sitelibdir\=./.gem.20241228-13560-xjm2id clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-758n0v sitelibdir\=./.gem.20250206-40810-758n0v clean
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)

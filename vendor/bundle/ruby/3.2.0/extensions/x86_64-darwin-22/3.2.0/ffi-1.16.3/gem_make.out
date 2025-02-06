@@ -10,10 +10,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-i2mxcf sitelibdir\=./.gem.20241228-13560-i2mxcf clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-xagbza sitelibdir\=./.gem.20250206-40810-xagbza clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-i2mxcf sitelibdir\=./.gem.20241228-13560-i2mxcf
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-xagbza sitelibdir\=./.gem.20250206-40810-xagbza
 Configuring libffi
 clang: error: unsupported option '-print-multi-os-directory'
 clang: error: no input files
@@ -104,7 +104,7 @@ ld: warning: alignment (1) of atom 'anon-8' (/Users/tomaszdebek/Applications_M1/
 ld: warning: alignment (1) of atom 'anon-9' (/Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22/.libs/libffi_convenience.a[9](unix64.o)) is too small and may result in unaligned pointers 
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-i2mxcf sitelibdir\=./.gem.20241228-13560-i2mxcf install
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-xagbza sitelibdir\=./.gem.20250206-40810-xagbza install
 cd "/Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22" && /Library/Developer/CommandLineTools/usr/bin/make
 /Library/Developer/CommandLineTools/usr/bin/make  all-recursive
 Making all in include
@@ -145,7 +145,7 @@ ld: warning: alignment (1) of atom 'anon-6' (/Users/tomaszdebek/Applications_M1/
 ld: warning: alignment (1) of atom 'anon-7' (/Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22/.libs/libffi_convenience.a[9](unix64.o)) is too small and may result in unaligned pointers 
 ld: warning: alignment (1) of atom 'anon-8' (/Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22/.libs/libffi_convenience.a[9](unix64.o)) is too small and may result in unaligned pointers 
 ld: warning: alignment (1) of atom 'anon-9' (/Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c/libffi-x86_64-darwin22/.libs/libffi_convenience.a[9](unix64.o)) is too small and may result in unaligned pointers 
-/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20241228-13560-i2mxcf
+/usr/bin/install -c -m 0755 ffi_c.bundle ./.gem.20250206-40810-xagbza
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/ffi-1.16.3/ext/ffi_c
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-i2mxcf sitelibdir\=./.gem.20241228-13560-i2mxcf clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-xagbza sitelibdir\=./.gem.20250206-40810-xagbza clean

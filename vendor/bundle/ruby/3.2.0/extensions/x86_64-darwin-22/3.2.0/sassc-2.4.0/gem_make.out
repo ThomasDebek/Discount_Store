@@ -3,10 +3,10 @@ current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/ven
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/sassc-2.4.0/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-rkdcow sitelibdir\=./.gem.20241228-13560-rkdcow clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-5sd4g9 sitelibdir\=./.gem.20250206-40810-5sd4g9 clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/sassc-2.4.0/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-rkdcow sitelibdir\=./.gem.20241228-13560-rkdcow
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-5sd4g9 sitelibdir\=./.gem.20250206-40810-5sd4g9
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
 compiling ./libsass/src/ast_fwd_decl.cpp
@@ -87,8 +87,8 @@ linking shared-object sassc/libsass.bundle
 ld: warning: -multiply_defined is obsolete
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/sassc-2.4.0/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-rkdcow sitelibdir\=./.gem.20241228-13560-rkdcow install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20241228-13560-rkdcow/sassc
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-5sd4g9 sitelibdir\=./.gem.20250206-40810-5sd4g9 install
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20250206-40810-5sd4g9/sassc
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/sassc-2.4.0/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-rkdcow sitelibdir\=./.gem.20241228-13560-rkdcow clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-5sd4g9 sitelibdir\=./.gem.20250206-40810-5sd4g9 clean

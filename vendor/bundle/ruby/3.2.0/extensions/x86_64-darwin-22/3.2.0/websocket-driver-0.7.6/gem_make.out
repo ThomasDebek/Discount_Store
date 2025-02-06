@@ -3,18 +3,18 @@ current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/ven
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-gvzmvw sitelibdir\=./.gem.20241228-13560-gvzmvw clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-u511tu sitelibdir\=./.gem.20250206-40810-u511tu clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-gvzmvw sitelibdir\=./.gem.20241228-13560-gvzmvw
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-u511tu sitelibdir\=./.gem.20250206-40810-u511tu
 compiling websocket_mask.c
 linking shared-object websocket_mask.bundle
 ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-gvzmvw sitelibdir\=./.gem.20241228-13560-gvzmvw install
-/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20241228-13560-gvzmvw
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-u511tu sitelibdir\=./.gem.20250206-40810-u511tu install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20250206-40810-u511tu
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-gvzmvw sitelibdir\=./.gem.20241228-13560-gvzmvw clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-u511tu sitelibdir\=./.gem.20250206-40810-u511tu clean

@@ -12,18 +12,18 @@ checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/io-console-0.7.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-b3uso8 sitelibdir\=./.gem.20241228-13560-b3uso8 clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-6oxzg0 sitelibdir\=./.gem.20250206-40810-6oxzg0 clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/io-console-0.7.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-b3uso8 sitelibdir\=./.gem.20241228-13560-b3uso8
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-6oxzg0 sitelibdir\=./.gem.20250206-40810-6oxzg0
 compiling console.c
 linking shared-object io/console.bundle
 ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/io-console-0.7.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-b3uso8 sitelibdir\=./.gem.20241228-13560-b3uso8 install
-/usr/bin/install -c -m 0755 console.bundle ./.gem.20241228-13560-b3uso8/io
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-6oxzg0 sitelibdir\=./.gem.20250206-40810-6oxzg0 install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20250206-40810-6oxzg0/io
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/io-console-0.7.2/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-b3uso8 sitelibdir\=./.gem.20241228-13560-b3uso8 clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-6oxzg0 sitelibdir\=./.gem.20250206-40810-6oxzg0 clean

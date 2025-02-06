@@ -14,10 +14,10 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/puma-5.6.8/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-2v6xx3 sitelibdir\=./.gem.20241228-13560-2v6xx3 clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-x9mvok sitelibdir\=./.gem.20250206-40810-x9mvok clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/puma-5.6.8/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-2v6xx3 sitelibdir\=./.gem.20241228-13560-2v6xx3
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-x9mvok sitelibdir\=./.gem.20250206-40810-x9mvok
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
@@ -26,8 +26,8 @@ ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/puma-5.6.8/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-2v6xx3 sitelibdir\=./.gem.20241228-13560-2v6xx3 install
-/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20241228-13560-2v6xx3/puma
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-x9mvok sitelibdir\=./.gem.20250206-40810-x9mvok install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20250206-40810-x9mvok/puma
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/puma-5.6.8/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-2v6xx3 sitelibdir\=./.gem.20241228-13560-2v6xx3 clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-x9mvok sitelibdir\=./.gem.20250206-40810-x9mvok clean

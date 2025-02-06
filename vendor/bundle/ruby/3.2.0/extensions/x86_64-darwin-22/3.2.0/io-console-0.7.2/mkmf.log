@@ -37,7 +37,7 @@ checked program was:
 DYLD_FALLBACK_LIBRARY_PATH=.:/Users/tomaszdebek/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/x86_64-darwin22 -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include  -I/usr/local/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe conftest.c  -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib  -fstack-protector-strong -L/usr/local/opt/gmp/lib     -lruby.3.2  -lpthread  "
 Undefined symbols for architecture x86_64:
   "_rb_io_path", referenced from:
-      _t in conftest-138c59.o
+      _t in conftest-bafada.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -183,7 +183,7 @@ checked program was:
 DYLD_FALLBACK_LIBRARY_PATH=.:/Users/tomaszdebek/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/x86_64-darwin22 -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include  -I/usr/local/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe conftest.c  -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib  -fstack-protector-strong -L/usr/local/opt/gmp/lib     -lruby.3.2  -lpthread  "
 Undefined symbols for architecture x86_64:
   "_rb_io_closed_p", referenced from:
-      _t in conftest-6318e9.o
+      _t in conftest-c1ec0b.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -235,7 +235,7 @@ checked program was:
 DYLD_FALLBACK_LIBRARY_PATH=.:/Users/tomaszdebek/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/x86_64-darwin22 -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/tomaszdebek/.rbenv/versions/3.2.2/include  -I/usr/local/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe conftest.c  -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib -L. -L/Users/tomaszdebek/.rbenv/versions/3.2.2/lib  -fstack-protector-strong -L/usr/local/opt/gmp/lib     -lruby.3.2  -lpthread  "
 Undefined symbols for architecture x86_64:
   "_rb_io_open_descriptor", referenced from:
-      _t in conftest-371bd1.o
+      _t in conftest-7facd7.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

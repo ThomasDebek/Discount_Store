@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 16.00 gigabytes
-Default processor set: 627 tasks, 2760 threads, 8 processors
-Load average: 27.37, Mach factor: 0.29
+Default processor set: 628 tasks, 2704 threads, 8 processors
+Load average: 50.89, Mach factor: 0.15
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -1026,7 +1026,7 @@ configure:18644: checking for memfd_create
 configure:18644: clang -o conftest -Wall  -fexceptions   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_memfd_create", referenced from:
-      _main in conftest-c869f6.o
+      _main in conftest-8b59b7.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18644: $? = 1

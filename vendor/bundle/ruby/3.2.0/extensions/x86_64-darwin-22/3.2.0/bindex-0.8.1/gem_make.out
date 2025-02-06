@@ -3,18 +3,18 @@ current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/ven
 creating Makefile
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-9f4zin sitelibdir\=./.gem.20241228-13560-9f4zin clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-g0d1mc sitelibdir\=./.gem.20250206-40810-g0d1mc clean
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-9f4zin sitelibdir\=./.gem.20241228-13560-9f4zin
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-g0d1mc sitelibdir\=./.gem.20250206-40810-g0d1mc
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.bundle
 ld: warning: -multiply_defined is obsolete
 ld: warning: ignoring duplicate libraries: '-lruby.3.2'
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-9f4zin sitelibdir\=./.gem.20241228-13560-9f4zin install
-/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20241228-13560-9f4zin/skiptrace/internal
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-g0d1mc sitelibdir\=./.gem.20250206-40810-g0d1mc install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20250206-40810-g0d1mc/skiptrace/internal
 
 current directory: /Users/tomaszdebek/Applications_M1/My_Page/Discount_Store/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
-make DESTDIR\= sitearchdir\=./.gem.20241228-13560-9f4zin sitelibdir\=./.gem.20241228-13560-9f4zin clean
+make DESTDIR\= sitearchdir\=./.gem.20250206-40810-g0d1mc sitelibdir\=./.gem.20250206-40810-g0d1mc clean

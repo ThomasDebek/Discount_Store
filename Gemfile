@@ -16,10 +16,15 @@ gem 'dry-monads', '~> 1.6'
 
 gem 'aasm', '~> 5.5'
 gem 'draper', '~> 4.0'
-gem 'a9n', '~> 1.5'
+gem 'a9n', '~> 1.5' #add previously
 
 gem 'kaminari', '~> 1.2'
 gem 'bootstrap5-kaminari-views'
+
+
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -92,6 +97,6 @@ group :test do
 end
 
 gem "faker", "~> 3.2"
-gem "devise", "~> 4.9"
+gem "devise", "~> 4.9" #add previously
 
 

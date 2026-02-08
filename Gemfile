@@ -2,7 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
-gem 'popper_js', '~> 2.11', '>= 2.11.8'
+gem 'popper_js', '2.11.8'
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-star-rating-rails', '~> 4.0'
 gem 'font-awesome-sass'

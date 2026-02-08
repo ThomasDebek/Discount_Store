@@ -16,7 +16,7 @@ gem 'dry-monads', '~> 1.6'
 
 gem 'aasm', '~> 5.5'
 gem 'draper', '~> 4.0'
-gem 'a9n', '~> 1.5'
+gem 'a9n', '~> 1.5' # We used also with google logged
 
 gem 'kaminari', '~> 1.2'
 gem 'bootstrap5-kaminari-views'
@@ -93,5 +93,5 @@ end
 
 gem "faker", "~> 3.2"
 gem "devise", "~> 4.9"
-
-
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'

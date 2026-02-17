@@ -96,3 +96,5 @@ gem "faker", "~> 3.2"
 gem "devise", "~> 4.9"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+gem "securerandom", "~> 0.4.1", platforms: %i[ mri mingw x64_mingw ]

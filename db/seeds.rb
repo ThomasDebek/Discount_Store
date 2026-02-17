@@ -8,22 +8,22 @@
 
 p "Delete all Data Base and create new...."
 
-Product.destroy_all
-User.destroy_all
-Brand.destroy_all
-Category.destroy_all
-Admin.destroy_all
-Order.destroy_all
-Payment.destroy_all
 CartItem.destroy_all
 Comment.destroy_all
-Payment.destroy_all
 OrderItem.destroy_all
+Payment.destroy_all
 Shipment.destroy_all
+Order.destroy_all
+Product.destroy_all
+Brand.destroy_all
+Category.destroy_all
+User.destroy_all
+Admin.destroy_all
 
 # db/seeds.rb
 require 'faker'
 require 'open-uri'
+require 'securerandom'
 
 
 Admin.create(
@@ -81,12 +81,25 @@ brands = Brand.all
       rating: rand(1..5),
       body: Faker::Lorem.paragraph
     )
+    # Obrazki dopasowane do nazwy
+    # Obrazki dopasowane do nazwy produktu
+    puts "✅ Generating image for #{product.name}"
+    begin
+      # Pobranie obrazka: używamy product.name bezpośrednio
+      seed = product.name.downcase.gsub(/\s+/, "_")
+      image_url = "https://picsum.photos/700/400?seed=#{seed}#{SecureRandom.uuid}"
 
-    puts "Generating image for #{product.name}"
-    downloaded_image = URI.open("https://source.unsplash.com/700x400/?#{product.name.split.last}")
-    product.image.attach(io: downloaded_image, filename: "mi_#{product.id}.png")
+      downloaded_image = URI.open(image_url, read_timeout: 5)
+      product.image.attach(
+        io: downloaded_image,
+        filename: "product_#{product.id}.jpg",
+        content_type: "image/jpeg"
+      )
+    rescue StandardError => e
+      puts "⚠️ Image skipped for #{product.name}: #{e.message}"
+    end
   else
-    puts "Failed to create product: #{product.errors.full_messages.join(', ')}"
+    puts "❌ Failed to create product: #{product.errors.full_messages.join(', ')}"
   end
 end
 

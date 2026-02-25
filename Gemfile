@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.4.8"
 gem 'popper_js', '2.11.8'
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-star-rating-rails', '~> 4.0'
@@ -23,7 +23,7 @@ gem 'bootstrap5-kaminari-views'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.8"
+gem "rails", "~> 8.1.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -32,7 +32,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem 'puma', '~> 7.2'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -96,3 +96,5 @@ gem "faker", "~> 3.2"
 gem "devise", "~> 4.9"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+gem "securerandom", "~> 0.4.1", platforms: %i[ mri mingw x64_mingw ]
